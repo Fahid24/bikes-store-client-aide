@@ -1,9 +1,9 @@
-import { signOut } from 'firebase/auth';
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebse.init';
+import { signOut } from 'firebase/auth';
 import logo from '../img/12-123722_clip-art-logos-motobike-hobbiesxstyle-black-motor-bike-removebg-preview.png'
 
 

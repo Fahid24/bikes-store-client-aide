@@ -3,7 +3,7 @@ import { Spinner } from 'react-bootstrap';
 import { useAuthState, useSendEmailVerification } from 'react-firebase-hooks/auth';
 import { Navigate, useLocation } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
-import auth from '../../firebase.init';
+import auth from '../../firebse.init';
 
 const RequiredAuth = ({ children }) => {
     const [user, loading] = useAuthState(auth);
