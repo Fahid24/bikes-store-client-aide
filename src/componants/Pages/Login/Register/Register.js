@@ -4,9 +4,9 @@ import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
-import auth from '../../firebse.init';
-import Titel from '../../Shared/Titel/Titel';
-import SocicalLogin from '../../SocialLogin/SocicalLogin';
+import auth from '../../../../firebse.init';
+import Titel from '../../../../Shared/Titel/Titel';
+import SocicalLogin from '../SocialLogin/SocicalLogin';
 
 const Register = () => {
     const [agree, setAgree] = useState(false);

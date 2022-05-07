@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import auth from '../firebse.init';
+import auth from '../../../../firebse.init';
+
 
 
 const SocicalLogin = () => {

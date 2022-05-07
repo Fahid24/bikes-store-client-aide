@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 const Titel = ({ title }) => {
     return (
         <Helmet title={title}>
-            <title>{title} -wildlife photographer</title>
+            <title>{title} -Cool bike </title>
         </Helmet>
     );
 };
