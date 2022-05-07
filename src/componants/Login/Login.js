@@ -1,12 +1,14 @@
-import { Button } from 'react-bootstrap';
-import { ToastContainer, toast } from 'react-toastify';
+
 import React, { useRef, useState } from 'react';
-import { Form } from 'react-bootstrap';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import SocicalLogin from '../../SocialLogin/SocicalLogin';
+import { Button, Form } from 'react-bootstrap';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import auth from '../../firebase.init';
+import { useLocation, useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import auth from '../../firebse.init';
+
 import Titel from '../../Shared/Titel/Titel';
+import SocicalLogin from '../../SocialLogin/SocicalLogin';
 
 const Login = () => {
     const emailRef = useRef('')

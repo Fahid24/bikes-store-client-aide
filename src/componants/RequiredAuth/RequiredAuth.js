@@ -1,4 +1,5 @@
 import React from 'react';
+import { Spinner } from 'react-bootstrap';
 import { useAuthState, useSendEmailVerification } from 'react-firebase-hooks/auth';
 import { Navigate, useLocation } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
@@ -10,7 +11,9 @@ const RequiredAuth = ({ children }) => {
     const [sendEmailVerification, sending, error] = useSendEmailVerification(auth);
 
     if (loading) {
-        return <p>Loading...</p>
+        return <p><Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+        </Spinner></p>
     }
     if (!user) {
         return <Navigate to="/login" state={{ from: location }} replace />;
@@ -22,7 +25,7 @@ const RequiredAuth = ({ children }) => {
 
             <button onClick={async () => {
                 await sendEmailVerification();
-                alert('Sent email');
+                toast('Sent email');
             }} className='btn btn-success opacity-10'>Send Verify Email </button>
             <ToastContainer></ToastContainer>
         </div>
