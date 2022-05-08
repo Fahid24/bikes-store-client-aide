@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
+import Footer from '../../../../Shared/Footer/Footer';
 import Banner from '../Banner/Banner';
 import DemoProducts from '../DemoProducts/DemoProducts';
 import Header from '../Header/Header';
@@ -9,6 +10,7 @@ const Home = () => {
         <div >
             <Banner></Banner>
             <DemoProducts></DemoProducts>
+            <Footer></Footer>
         </div>
     );
 };

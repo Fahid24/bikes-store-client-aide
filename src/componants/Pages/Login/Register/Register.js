@@ -1,66 +1,44 @@
 
-import React, { useRef, useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import React from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import auth from '../../../../firebse.init';
-import Titel from '../../../../Shared/Titel/Titel';
-import SocicalLogin from '../../../../SocialLogin/SocicalLogin';
+import Loading from '../../../../Shared/Loading/Loading';
 
 
 const Register = () => {
-    const [agree, setAgree] = useState(false);
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth);
     const navigate = useNavigate()
-    const emailRef = useRef();
-    const passwordRef = useRef()
-    const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
-    const handleRegistration = (event) => {
-        event.preventDefault();
-        const email = emailRef.current.value;
-        const password = passwordRef.current.value;
-        createUserWithEmailAndPassword(email, password)
-    }
-    if (loading) {
-        return <p>Loading...</p>
-    }
+    const onSubmit = (data) => {
+        console.log(data);
+        // const email = data.email;
+        // const password = data.password;
+        // createUserWithEmailAndPassword(email, password)
+    };
+
     if (user) {
         navigate('/home')
     }
+    if (loading) {
+        <Loading></Loading>
+    }
     return (
-        <div className='container mx-auto rounded row mx-autod  d-flex justify-content-center '>
-            <Titel title='Register'></Titel>
-
-            <div className=' col-sm-12 col-lg-6 border shadow pb-5 px-5'>
-                <h1 className='text-primary text-center text-opacity-75'>Register an account</h1>
-                <Form onSubmit={handleRegistration} className='mb-2'>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Your Name</Form.Label>
-                        <Form.Control type="text" placeholder="your name" required />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check onClick={() => setAgree(!agree)} type="checkbox" label="Accept terms and condition" />
-                    </Form.Group>
-                    <Button variant="primary" type="submit" disabled={!agree} className='w-100'>
-                        Register
-                    </Button>
-                </Form>
-                {error && <p className='text-danger text-center'>{error.message}</p>}
-                <div>
-                    <Link to='/login' className='text-primary text-decoration-none pt-2 '> Go to login</Link>
-                </div>
-                <SocicalLogin></SocicalLogin>
+        <div className='row  my-5'>
+            <div className=" shadow p-5 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mx-auto  bg-secondary bg-opacity-10">
+                <h1 className='text-center'>Please Register </h1>
+                <form onSubmit={handleSubmit(onSubmit)} >
+                    <input className="w-100 p-2 border-0 shadow" {...register('email')} placeholder="Email" required /><br />
+                    <input type='password' className="w-100 my-3 p-2 border-0" {...register('password')} placeholder='enter password' required /><br />
+                    <input className='w-100 btn btn-primary border-0' type="submit" />
+                </form>
+                <Link to="/login" className='text-primary text-decoration-none'>Already have an account?</Link>
             </div>
         </div>
     );
 };
+
 
 export default Register;
