@@ -1,0 +1,12 @@
+img:hover {
+    width: 290px;
+
+}
+
+
+
+.btn:hover {
+    font-size: large;
+    color: aliceblue;
+    background-color: rgb(105, 105, 107);
+}

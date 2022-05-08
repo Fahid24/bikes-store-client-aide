@@ -1,8 +1,13 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
+import { Navigate } from 'react-router';
+import './Product.css'
 
 const Product = ({ product }) => {
-    const { name, img, description, price, supplier } = product;
+    const { name, img, description, price, supplier, _id } = product;
+    const handleUpdate = (id) => {
+        Navigate(`/products/${id}`)
+    }
     return (
         <div className='container row gap-3 d-flex justify-content-center '>
 
@@ -17,11 +22,12 @@ const Product = ({ product }) => {
                         <h3>{price}</h3>
                     </Card.Text>
                     <Card.Text>
-                        <h4>{supplier}</h4>
+                        <h4>Supplier: {supplier}</h4>
                     </Card.Text>
-                    <Button variant="primary">Update</Button>
+                    <Button className='btn w-100' onClick={() => handleUpdate(_id)} variant="dark">Update</Button>
                 </Card.Body>
             </Card>
+
 
         </div>
     );

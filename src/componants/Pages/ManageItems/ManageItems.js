@@ -33,7 +33,7 @@ const ManageItems = () => {
                 </tbody>
             </Table>
 
-            <Link to='/addProduct' className='w-25 d-block mx-auto btn bg-success bg-opacity-75 text-white'>Add New Product</Link>
+            <Link to='/AddProducts' className='w-25 d-block mx-auto btn bg-success bg-opacity-75 text-white'>Add New Product</Link>
         </div>
 
     );

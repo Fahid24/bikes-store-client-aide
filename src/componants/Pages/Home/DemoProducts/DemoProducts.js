@@ -7,14 +7,15 @@ const DemoProducts = () => {
 
 
     const demoProducts = [...products.slice(0, 6)]
-    console.log(demoProducts);
+
     return (
-        <div>
-            <h1>ho ho aeida demo product</h1>
-            <h1>Products : {demoProducts.length}</h1>
+        <div className=' mx-5 row gap-3 mt-5 '>
+
+            <h1 className='borde text-center  bg-info'>Products : {demoProducts.length}</h1>
             {
                 demoProducts.map(product => <Product
                     product={product}
+                    key={product._id}
                 ></Product>)
             }
 

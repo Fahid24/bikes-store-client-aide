@@ -6,7 +6,7 @@ import Product from '../Product/Product';
 
 const Products = () => {
     const [products] = useProducts()
-    const demoProduct = [...products.slice(0, 6)]
+
     if (products.length === 0) {
         return <Loading></Loading>
     }
@@ -16,12 +16,12 @@ const Products = () => {
             <h1 className='text-center mt-4'>Products :  { }</h1>
             <div className='w-100 row gap-3 d-flex justify-content-center'>
                 {
-                    demoProduct.map(product => <Product
+                    products.map(product => <Product
                         key={product._id}
                         product={product}></Product>)
                 }
             </div>
-            <Link className='btn btn-primary mx-auto d-block w-25 my-5' to='/manageProducts'>Manage All Products</Link>
+            <Link className='btn btn-primary mx-auto d-block w-25 my-5' to='products/:id'>Manage All Products</Link>
         </div>
     );
 }

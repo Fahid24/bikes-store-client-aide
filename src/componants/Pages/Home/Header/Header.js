@@ -21,7 +21,7 @@ const Header = () => {
                     <Nav className="me-auto">
                         <Navbar.Brand href="/home">Home</Navbar.Brand>
                         <Nav.Link href="/manageItems">Manage-Items</Nav.Link>
-                        <Nav.Link href="pricing">Pricing</Nav.Link>
+                        <Nav.Link href="/myItems">my-Items</Nav.Link>
                     </Nav>
                     <Nav>
                         {!user ? <Nav.Link as={Link} to="/login">Login</Nav.Link>

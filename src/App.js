@@ -1,11 +1,12 @@
 import { Route, Routes } from 'react-router';
-import AddItem from './AddItem/AddItem';
 import './App.css';
+import AddProducts from './componants/Pages/AddProducts/AddProducts';
 import Header from './componants/Pages/Home/Header/Header';
 import Home from './componants/Pages/Home/Home/Home';
 import Login from './componants/Pages/Login/Login/Login';
 import Register from './componants/Pages/Login/Register/Register';
 import ManageItems from './componants/Pages/ManageItems/ManageItems';
+import MyItems from './componants/Pages/MyItems/MyItems';
 import Products from './componants/Pages/Products/Products';
 import RequiredAuth from './componants/RequiredAuth/RequiredAuth';
 import Footer from './Shared/Footer/Footer';
@@ -24,20 +25,20 @@ function App() {
             <ManageItems></ManageItems>
           </RequiredAuth>
         }></Route>
-        <Route path='/addItems' element={
+        <Route path='/AddProducts' element={
           <RequiredAuth>
-            <AddItem></AddItem>
+            <AddProducts></AddProducts>
           </RequiredAuth>
         }></Route>
-        {/* <Route path='/myProducts' element={
+        <Route path='/myItems' element={
           <RequiredAuth>
-            <MyProducts></MyProducts>
+            <MyItems></MyItems>
           </RequiredAuth>
-        }></Route> */}
+        }></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
       </Routes>
-      <Footer></Footer>
+
     </div>
   );
 }
