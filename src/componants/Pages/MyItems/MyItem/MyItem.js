@@ -1,4 +1,5 @@
 import React from 'react';
+import { TrashIcon } from '@heroicons/react/solid'
 
 const MyItem = ({ product, handleDelete }) => {
     const { name, quantity, price, description, supplier, _id, img } = product;
@@ -21,7 +22,7 @@ const MyItem = ({ product, handleDelete }) => {
                 </div>
 
                 <div className='my-auto  col-xl-2 col-lg-2 col-md-2 d-flex justify-content-center'>
-                    <h3 onClick={() => handleDelete(_id)} className=' btn  mx-auto text-danger' style={{ width: '70px' }}>X</h3>
+                    <TrashIcon onClick={() => handleDelete(_id)} className=' btn  mx-auto text-danger' style={{ width: '70px' }}></TrashIcon>
                 </div>
             </div>
 

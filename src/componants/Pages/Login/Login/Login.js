@@ -8,7 +8,6 @@ import Footer from '../../../../Shared/Footer/Footer';
 import Loading from '../../../../Shared/Loading/Loading';
 import SocicalLogin from '../../../../SocialLogin/SocicalLogin';
 
-
 const Login = () => {
     const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
@@ -20,6 +19,7 @@ const Login = () => {
         console.log(data);
         const email = data.email;
         const password = data.password;
+        console.log(email, password);
         signInWithEmailAndPassword(email, password)
         data.reset()
     };

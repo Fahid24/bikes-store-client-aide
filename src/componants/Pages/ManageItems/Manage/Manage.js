@@ -1,12 +1,14 @@
 import React from 'react';
 import useProducts from '../../../../hooks/useProducts'
+import { TrashIcon } from '@heroicons/react/solid'
+
 const Manage = ({ product }) => {
     const [products, setProducts] = useProducts();
     const { name, quantity, price, supplier, _id, img } = product;
     const handleDelete = (id) => {
         const confirmation = window.confirm('Are you sure to delete?');
         if (confirmation) {
-            const url = `http://localhost:5000/products/${id}`;
+            const url = `https://pure-bayou-44606.herokuapp.com/products/${id}`;
             fetch(url, {
                 method: 'DELETE',
             })
@@ -32,7 +34,7 @@ const Manage = ({ product }) => {
             <td>{supplier}</td>
             <td>
 
-                <h3 onClick={() => handleDelete(_id)} className=' btn  mx-auto text-danger' style={{ width: '60px' }}>x</h3>
+                <TrashIcon onClick={() => handleDelete(_id)} className=' btn  mx-auto text-danger' style={{ width: '60px' }}></TrashIcon>
             </td>
         </tr>
     );

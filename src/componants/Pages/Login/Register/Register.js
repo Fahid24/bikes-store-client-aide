@@ -13,7 +13,6 @@ const Register = () => {
     const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth);
     const navigate = useNavigate()
     const onSubmit = (data) => {
-        console.log(data);
         const email = data.email;
         const password = data.password;
         createUserWithEmailAndPassword(email, password)
@@ -23,7 +22,7 @@ const Register = () => {
         navigate('/home')
     }
     if (loading) {
-        <Loading></Loading>
+        return <Loading></Loading>
     }
     return (
         <div className='row  my-5'>

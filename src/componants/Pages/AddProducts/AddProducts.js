@@ -8,7 +8,7 @@ const AddProducts = () => {
     const [user] = useAuthState(auth)
     const onSubmit = data => {
         data.email = user.email;
-        const url = 'http://localhost:5000/products';
+        const url = 'https://pure-bayou-44606.herokuapp.com/products';
         fetch(url, {
             method: 'POST',
             headers: {

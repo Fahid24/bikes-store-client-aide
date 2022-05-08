@@ -8,7 +8,7 @@ const UpdateProduct = () => {
     const { quantity, ...rest } = product;
     console.log(product)
     useEffect(() => {
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://pure-bayou-44606.herokuapp.com/products/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -21,7 +21,7 @@ const UpdateProduct = () => {
         event.preventDefault();
         const quant = parseInt(event.target.quantity.value)
         const electronicInfo = { quantity: parseInt(product.quantity) + quant, ...rest }
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://pure-bayou-44606.herokuapp.com/products/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -32,14 +32,13 @@ const UpdateProduct = () => {
             .then(res => res.json())
             .then(data => {
                 setProduct(electronicInfo)
-                // setReload(!reload)
                 event.target.reset();
             })
     }
     const handleDelivered = (event) => {
         event.preventDefault();
         const electronicInfo = { quantity: parseInt(product.quantity) - 1, ...rest }
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://pure-bayou-44606.herokuapp.com/products/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -58,7 +57,7 @@ const UpdateProduct = () => {
         <div className='container'>
             <div className=" mt-5 d-flex">
                 <div className=' d-flex justify-content-center pt-5'>
-                    <img className='mx-auto' src={product?.img} alt='' />
+                    <img className='mx-auto' src={product?.img} style={{ width: '400px' }} alt='' />
                 </div>
                 <div className='d-flex justify-content-center align-items-center'>
                     <div>

@@ -1,18 +1,18 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
-import { Navigate } from 'react-router';
+import { useNavigate } from 'react-router';
 import './Product.css'
 
 const Product = ({ product }) => {
     const { name, img, description, price, supplier, _id } = product;
+    const navigate = useNavigate()
     const handleUpdate = (id) => {
-        Navigate(`/products/${id}`)
+        navigate(`/products/${id}`)
     }
     return (
-        <div className='container row gap-3 d-flex justify-content-center '>
-
-            <Card className='text-center border rounded col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4  ' style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={img} />
+        <div className=' col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-4    d-flex justify-content-center '>
+            <Card className='text-center border rounded ' style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={img} style={{ widht: '300px' }} />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
                     <Card.Text>
@@ -21,15 +21,15 @@ const Product = ({ product }) => {
                     <Card.Text>
                         <h3>{price}</h3>
                     </Card.Text>
-                    <Card.Text>
+                    <Card.Text className=''>
                         <h4>Supplier: {supplier}</h4>
                     </Card.Text>
-                    <Button className='btn w-100' onClick={() => handleUpdate(_id)} variant="dark">Update</Button>
+                    <Button style={{ marginBottom: '0' }} className='btn w-100 ' onClick={() => handleUpdate(_id)} variant="info">Update</Button>
                 </Card.Body>
             </Card>
 
 
-        </div>
+        </div >
     );
 };
 
