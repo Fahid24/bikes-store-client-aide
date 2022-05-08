@@ -2,7 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## About projects
+# This projecst is about bike store house.
+# There are a banner and some products on home page.
+# You can add products or remobe products from here.
+# You can't inter some pages without login.
+# you can add quantity or dicrase quantity.
 
 In the project directory, you can run:
 

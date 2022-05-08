@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router';
 import './App.css';
 import NotFound from './componants/NotFound/NotFound';
 import AddProducts from './componants/Pages/AddProducts/AddProducts';
+import Blogs from './componants/Pages/Blogs/Blogs';
 import Header from './componants/Pages/Home/Header/Header';
 import Home from './componants/Pages/Home/Home/Home';
 import Login from './componants/Pages/Login/Login/Login';
@@ -40,6 +41,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
       </Routes>
 
     </div>

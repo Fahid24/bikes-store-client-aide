@@ -10,7 +10,7 @@ import Loading from '../../../../Shared/Loading/Loading';
 
 const Register = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth);
+    const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const navigate = useNavigate()
     const onSubmit = (data) => {
         const email = data.email;
@@ -33,6 +33,8 @@ const Register = () => {
                     <input type='password' className="w-100 my-3 p-2 border-0" {...register('password')} placeholder='enter password' required /><br />
                     <input className='w-100 btn btn-primary border-0' type="submit" />
                 </form>
+                {error && <p className='text-danger text-center'>{error.message}</p>}
+
                 <Link to="/login" className='text-primary text-decoration-none'>Already have an account?</Link>
             </div>
         </div>

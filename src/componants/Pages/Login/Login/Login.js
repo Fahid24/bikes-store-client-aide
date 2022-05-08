@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useLocation, useNavigate } from 'react-router';
@@ -13,7 +13,7 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
-    const [signInWithEmailAndPassword, user, loading,] = useSignInWithEmailAndPassword(auth);
+    const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
 
     const onSubmit = (data) => {
         console.log(data);
@@ -30,6 +30,9 @@ const Login = () => {
     if (loading) {
         <Loading></Loading>
     }
+    if (error) {
+
+    }
     return (
         <div className='row  my-5'>
             <div className=" shadow p-5 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mx-auto  bg-secondary bg-opacity-10">
@@ -39,6 +42,7 @@ const Login = () => {
                     <input className="w-100 p-2 my-3 border-0 shadow"  {...register('password')} placeholder='enter password' required /><br />
                     <input className='w-100 btn btn-primary' type="submit" />
                 </form>
+                {(error) && <p className='text-danger text-center'>{error.message}</p>}
                 <Link to="/register" className='text-primary text-decoration-none'>Create an account</Link>
                 <SocicalLogin></SocicalLogin>
             </div>
