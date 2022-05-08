@@ -1,5 +1,6 @@
 import React from 'react';
-import SocicalLogin from '../SocialLogin/SocicalLogin';
+import SocicalLogin from '../../../../SocialLogin/SocicalLogin';
+
 
 const Login = () => {
     return (
