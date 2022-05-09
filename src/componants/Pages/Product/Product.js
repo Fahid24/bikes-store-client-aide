@@ -3,7 +3,7 @@ import { Button, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router';
 import './Product.css'
 
-const Product = ({ product }) => {
+const Product = ({ product, p }) => {
     const { name, img, description, price, supplier, _id } = product;
     const navigate = useNavigate()
     const handleUpdate = (id) => {
@@ -12,7 +12,7 @@ const Product = ({ product }) => {
     return (
         <div className=' col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-4    d-flex justify-content-center '>
             <Card className='text-center border rounded ' style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={img} style={{ widht: '300px' }} />
+                <Card.Img className='pic' variant="top" src={img} style={{ widht: '300px' }} />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
                     <Card.Text>

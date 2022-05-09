@@ -1,7 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import img from '../../../img/1(1).jpg'
-import img2 from '../../../img/content-dam-h-d-images-motorcycles-my17-carousel-hdi-17-hd-street-750-medium-500x500.png'
+import img from '../../../img/1(1).jpg';
 
 const Banner = () => {
     return (
@@ -43,6 +42,7 @@ const Banner = () => {
 
 
             </Carousel>
+
         </div>
     );
 };

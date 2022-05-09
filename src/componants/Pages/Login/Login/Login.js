@@ -16,10 +16,10 @@ const Login = () => {
     const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
 
     const onSubmit = (data) => {
-        console.log(data);
+
         const email = data.email;
         const password = data.password;
-        console.log(email, password);
+
         signInWithEmailAndPassword(email, password)
         data.reset()
     };
