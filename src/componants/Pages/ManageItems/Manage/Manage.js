@@ -1,6 +1,9 @@
 import React from 'react';
 import useProducts from '../../../../hooks/useProducts'
 import { TrashIcon } from '@heroicons/react/solid'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Manage = ({ product }) => {
     const [products, setProducts] = useProducts();
@@ -19,7 +22,7 @@ const Manage = ({ product }) => {
                         setProducts(remaining);
                     }
                     else {
-                        alert('No matched document !')
+                        toast('No matched document !')
                     }
                 })
         }
@@ -36,6 +39,7 @@ const Manage = ({ product }) => {
 
                 <TrashIcon onClick={() => handleDelete(_id)} className=' btn  mx-auto text-danger' style={{ width: '60px' }}></TrashIcon>
             </td>
+            <ToastContainer></ToastContainer>
         </tr>
     );
 };

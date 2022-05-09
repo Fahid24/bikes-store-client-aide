@@ -2,6 +2,9 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebse.init';
 import { useForm } from 'react-hook-form';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Footer from '../../../Shared/Footer/Footer';
 
 const AddProducts = () => {
     const { register, handleSubmit } = useForm();
@@ -18,7 +21,7 @@ const AddProducts = () => {
         })
             .then(res => res.json())
             .then(data => {
-                alert('Successfully added !!');
+                toast('Successfully added !!');
             })
     };;
     return (
@@ -35,6 +38,8 @@ const AddProducts = () => {
                     <input type="submit" className='w-100 btn-primary mt-2 p-2 border-0 rounded' />
                 </form>
             </div>
+            <ToastContainer></ToastContainer>
+            <Footer></Footer>
         </div>
     )
 };

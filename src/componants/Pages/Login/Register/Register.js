@@ -8,6 +8,7 @@ import auth from '../../../../firebse.init';
 import Loading from '../../../../Shared/Loading/Loading';
 
 
+
 const Register = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
@@ -25,7 +26,7 @@ const Register = () => {
         return <Loading></Loading>
     }
     return (
-        <div className='row  my-5'>
+        <div className='row  my-5 mb-5'>
             <div className=" shadow p-5 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mx-auto  bg-secondary bg-opacity-10">
                 <h1 className='text-center'>Please Register </h1>
                 <form onSubmit={handleSubmit(onSubmit)} >

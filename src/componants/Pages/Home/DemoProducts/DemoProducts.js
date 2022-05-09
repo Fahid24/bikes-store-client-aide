@@ -37,7 +37,7 @@ const DemoProducts = () => {
 
     return (
         <div className=''>
-            <div className='bg-dark w-50 py-2 d-flex gap-2 mx-auto justify-content-center mx-auto p-2 border rounded-pill'>
+            <div className='bg-dark py-2 d-flex gap-2 mx-auto justify-content-center mx-auto p-2 border rounded-pill'>
                 <h3 className='text-white'>Search Bike: </h3>
                 <input className='border rounded w-25 p-2 border-0 shadow' onChange={handleSearch} placeholder="search product" />
 

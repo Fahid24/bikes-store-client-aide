@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import Footer from '../../../Shared/Footer/Footer';
 
 const UpdateProduct = () => {
     const { id } = useParams();
@@ -57,7 +58,7 @@ const UpdateProduct = () => {
         <div className='container'>
             <div className=" mt-5 d-flex">
                 <div className=' d-flex justify-content-center pt-5'>
-                    <img className='mx-auto' src={product?.img} style={{ width: '400px' }} alt='' />
+                    <img className='mx-auto img-fluid' src={product?.img} style={{}} alt='' />
                 </div>
                 <div className='d-flex justify-content-center align-items-center'>
                     <div>
@@ -76,6 +77,7 @@ const UpdateProduct = () => {
                 </div>
             </div>
             <Link className='btn btn-primary mx-auto d-block w-25 my-5' to='/manageItems'>Manage All Products</Link>
+            <Footer></Footer>
         </div>
     )
 };

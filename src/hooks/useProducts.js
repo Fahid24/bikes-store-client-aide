@@ -4,6 +4,7 @@ const useProducts = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
         const url = 'https://pure-bayou-44606.herokuapp.com/products';
+
         fetch(url)
             .then(res => res.json())
             .then(data => {

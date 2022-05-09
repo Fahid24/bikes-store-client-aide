@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../../firebse.init';
 import { signOut } from 'firebase/auth';
-import logo from '../../../img/download-removebg-preview.png'
+import logo from '../../../img/New folder/download-removebg-preview.png'
 
 
 const Header = () => {

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import useProducts from '../../../hooks/useProducts';
+import Footer from '../../../Shared/Footer/Footer';
 import Loading from '../../../Shared/Loading/Loading';
 import Product from '../Product/Product';
 
@@ -20,6 +21,7 @@ const Products = () => {
                 }
             </div>
             <Link className='btn btn-primary mx-auto d-block w-25 my-5' to='/manageItems'>Manage All Products</Link>
+            <Footer></Footer>
         </div>
     );
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebse.init';
+import Footer from '../../../Shared/Footer/Footer';
 import MyItem from './MyItem/MyItem';
 
 const MyItems = () => {
@@ -53,6 +54,7 @@ const MyItems = () => {
 
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 }

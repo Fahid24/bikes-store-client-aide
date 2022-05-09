@@ -8,6 +8,7 @@ import Footer from '../../../../Shared/Footer/Footer';
 import Loading from '../../../../Shared/Loading/Loading';
 import SocicalLogin from '../../../../SocialLogin/SocicalLogin';
 
+
 const Login = () => {
     const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
@@ -15,12 +16,13 @@ const Login = () => {
     const from = location.state?.from?.pathname || '/';
     const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
 
-    const onSubmit = (data) => {
+    const onSubmit = data => {
 
         const email = data.email;
         const password = data.password;
 
         signInWithEmailAndPassword(email, password)
+
         data.reset()
     };
 
@@ -30,11 +32,9 @@ const Login = () => {
     if (loading) {
         <Loading></Loading>
     }
-    if (error) {
 
-    }
     return (
-        <div className='row  my-5'>
+        <div className='row  my-5 mb-5'>
             <div className=" shadow p-5 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mx-auto  bg-secondary bg-opacity-10">
                 <h1 className='text-center'>Please login </h1>
                 <form onSubmit={handleSubmit(onSubmit)} >
