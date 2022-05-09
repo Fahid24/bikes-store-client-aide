@@ -11,7 +11,7 @@ const SocicalLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     const navigate = useNavigate();
     const location = useLocation();
-    const from = location.state?.from?.pathname || '/hone';
+    const from = location.state?.from?.pathname || '/';
 
     const handleGoogleSignIn = () => {
         signInWithGoogle()
