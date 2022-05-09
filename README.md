@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-# [Live link](https://my-11th-assignment-clintsite.web.app/home).
+# [Live link](https://my-11th-assignment-clintsite.web.app/).
 
 ## About projects
 # This projecst is about bike store house.
